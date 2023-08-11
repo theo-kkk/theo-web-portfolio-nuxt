@@ -8,8 +8,9 @@
         v-model="colorMode.value"
         class="border w-20 h-8 dark:bg-[#1e1f21] dark:text-white dark:border-gray-700 outline-none text-center rounded text-sm"
       >
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
+        <option v-for="theme in themeMode" :key="theme" :value="theme">
+          {{ theme }}
+        </option>
       </select>
     </header>
     <main class="flex h-full flex-col">
@@ -18,8 +19,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const colorMode = useColorMode();
+const themeMode = ["dark", "light"];
 </script>
 
 <style lang="postcss">
