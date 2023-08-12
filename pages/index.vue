@@ -1,7 +1,13 @@
 <template>
-  <div class="flex h-full flex-col justify-center items-center gap-2">
-    <p class="text-5xl tracking-[3px] font-bold text-center">COMMING</p>
-    <p class="text-5xl tracking-[3px] font-bold text-center">SOON</p>
+  <div
+    class="flex h-full flex-col justify-center items-center gap-2 tablet:gap-1"
+  >
+    <p class="text-5xl tracking-[3px] font-bold text-center tablet:text-3xl">
+      COMMING
+    </p>
+    <p class="text-5xl tracking-[3px] font-bold text-center tablet:text-3xl">
+      SOON
+    </p>
     <a
       class="tracking-[-1px] underline"
       target="_blank"
