@@ -4,7 +4,7 @@
       class="flex w-full h-20 items-center px-2 justify-between dark:bg-[#29292c] fixed top-0 left-0 tablet:h-16 border-b dark:border-none"
     >
       <h1 class="text-xl -tracking-[0.8px] tablet:text-lg">
-        Theo's Web Portfolio
+        <NuxtLink to="/"> Theo's Web Portfolio </NuxtLink>
       </h1>
       <!-- <select
         v-model="colorMode.value"
