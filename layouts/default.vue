@@ -16,13 +16,13 @@
       </select> -->
       <button
         type="button"
-        @click="onThemehandler"
-        class="dark:text-white dark:border-gray-700 outline-none text-center rounded text-sm -tracking-[0.5px]"
+        @click="theme.themeModify"
+        class="dark:text-white dark:border-gray-700 outline-none text-center rounded text-sm -tracking-[0.5px] cursor-pointer"
       >
-        <div v-if="theme.mode === 'dark'">
+        <div v-if="theme.currentTheme === 'dark'">
           <CommonSvgMoon width="70px" height="24px" />
         </div>
-        <div v-else-if="theme.mode === 'light'">
+        <div v-else-if="theme.currentTheme === 'light'">
           <CommonSvgSun width="70px" height="24px" />
         </div>
       </button>
@@ -34,19 +34,8 @@
 </template>
 
 <script setup lang="ts">
-const colorMode = useColorMode();
-const themeMode = reactive(["dark", "light"]);
-const theme = reactive({ mode: "dark" });
-
-const onThemehandler = () => {
-  if (theme.mode === "dark") {
-    theme.mode = "light";
-    colorMode.value = "light";
-  } else {
-    theme.mode = "dark";
-    colorMode.value = "dark";
-  }
-};
+import { useThemeStore } from "@/stores/theme";
+const theme = useThemeStore();
 </script>
 
 <style lang="postcss">

@@ -246,8 +246,8 @@
 
 <script setup lang="ts">
 interface Props {
-  width: number;
-  height: number;
+  width: string;
+  height: string;
 }
 
 const props = defineProps<Props>();
