@@ -17,9 +17,14 @@
       <button
         type="button"
         @click="onThemehandler"
-        class="border w-20 h-8 dark:bg-[#1e1f21] dark:text-white dark:border-gray-700 outline-none text-center rounded text-sm -tracking-[0.5px]"
+        class="dark:text-white dark:border-gray-700 outline-none text-center rounded text-sm -tracking-[0.5px]"
       >
-        {{ theme.mode.toUpperCase() }}
+        <div v-if="theme.mode === 'dark'">
+          <CommonSvgMoon width="70px" height="24px" />
+        </div>
+        <div v-else-if="theme.mode === 'light'">
+          <CommonSvgSun width="70px" height="24px" />
+        </div>
       </button>
     </header>
     <main class="flex h-full flex-col">
